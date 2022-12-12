@@ -36,11 +36,11 @@ const options = {
 	}
 	disabledBtnStart = false;
 	btmStart.style.color = "#212121";
-	timeId = setInterval(timeDistribution, 1000)
+	timeId = setInterval(timeIsShare, 1000)
 	
  }
    
-function timeDistribution() {
+function timeIsShare() {
 	const timeNow = Date.now();
 	// console.log(timeNow);
 	const remaining = options.selectedDate - timeNow;
@@ -54,7 +54,6 @@ function timeDistribution() {
 	if (remaining===0) {
 		clearInterval(timeId); 
 	}
-	
 };
 function addLeadingZero(value) {
 	return String(value).padStart(2, "0")
@@ -76,5 +75,6 @@ function addLeadingZero(value) {
 	const seconds = addLeadingZero(Math.floor((((ms % day) % hour) % minute) / second));
  
 	return { days, hours, minutes, seconds };
- }
+}
+
 
